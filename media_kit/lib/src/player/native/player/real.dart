@@ -1223,7 +1223,7 @@ class NativePlayer extends PlatformPlayer {
     bool waitForInitialization = true,
   }) async {
     if (disposed) {
-      throw AssertionError('[Player] has been disposed');
+      throw AssertionError('$property $value [Player] has been disposed');
     }
 
     if (waitForInitialization) {
@@ -1288,7 +1288,7 @@ class NativePlayer extends PlatformPlayer {
     bool waitForInitialization = true,
   }) async {
     if (disposed) {
-       throw AssertionError('$property $value [Player] has been disposed');
+       throw AssertionError('[Player] has been disposed');
     }
 
     if (waitForInitialization) {
