@@ -262,7 +262,7 @@ class AndroidVideoController extends PlatformVideoController {
 
   /// Disposes the instance. Releases allocated resources back to the system.
   Future<void> _dispose() async {
-    super.dispose();
+    //super.dispose(); it should be at the end
     wid.dispose();
     wid.removeListener(widListener);
     platform.onLoadHooks.remove(onLoadHook);
@@ -276,6 +276,7 @@ class AndroidVideoController extends PlatformVideoController {
         'handle': handle.toString(),
       },
     );
+      super.dispose(); //did to solve the bug, it was disposing beofe setting the property
   }
 
   /// Currently created [AndroidVideoController]s.
