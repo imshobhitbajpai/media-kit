@@ -237,7 +237,7 @@ class NativeVideoController extends PlatformVideoController {
 
   /// Disposes the instance. Releases allocated resources back to the system.
   Future<void> _dispose() async {
-    super.dispose();
+    //super.dispose();
     await videoParamsSubscription?.cancel();
     final handle = await player.handle;
     _controllers.remove(handle);
@@ -247,6 +247,7 @@ class NativeVideoController extends PlatformVideoController {
         'handle': handle.toString(),
       },
     );
+    super.dispose();
   }
 
   /// Currently created [NativeVideoController]s.
